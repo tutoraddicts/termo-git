@@ -3,6 +3,7 @@ same_path() {
 	git init
 	echo "then we are going to add files into git"
 	git add *
+	git rm --cached test
 	echo "It is your git status"
 	git status
 	echo "Now creat a new Repo in git copy the path and past here and press enter to continue"
@@ -15,6 +16,14 @@ same_path() {
 	git remote add origin $repo_URL
 	git push -u origin master
 	echo "Now we all done Check your repo in github"
+}
+
+diff_path() {
+	echo "We are going to initilise the git into your path so Enter your project path First"
+	echo "We Recoment you to place the file into your path To make it easy"
+	read path
+	cd $path
+	same_path
 }
 echo "Welcome To the git project. There some simple steps you have to do here.So We will guid you through this."
 echo "select any one those option"
@@ -29,7 +38,7 @@ do
 			break
 			;;
 		2)
-			echo "such a dumb"
+			diff_path
 			break
 			;;
 		*)
