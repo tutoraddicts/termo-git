@@ -21,11 +21,12 @@ So if you find any issue or any bug please report me in : rohitdutta907@gmail.co
 
 How to use it :
   Steps :
-      1. Place the Script into your project folder
+     
+    1. Place the Script into your project folder
     
-      2. Open your terminal and Navigate to your project folder
+    2. Open your terminal and Navigate to your project folder
     
-      3. Run this command : bash github-terminal.sh
+    3. Run this command : bash github-terminal.sh
     
     
    then you good to go. Btw i am trying to find a way to make it easy to execute without terminal :)
