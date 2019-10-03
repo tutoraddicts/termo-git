@@ -6,10 +6,15 @@ I am going to mention some features bellow :
   It is in alfa mode right now so not all the mentioned features are available right now.
 
 1.Upload source to github first time.
+
 2.Upload source secod time.
+
 3.Clone old repo.
+
 4.Add File into your local repo
+
 5.Remove File from your local repo
+
 
 I can add more features, as per need.
 So if you find any issue or any bug please report me in : rohitdutta907@gmail.com
