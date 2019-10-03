@@ -22,6 +22,7 @@ first_time() {
 				;;
 	 esac
 	done
+	git rm --cached github-terminal.sh
 	echo "Now creat a new Repo in your github"
 	echo "If you done all ready, copy the URL"
 	echo "and past the URL here and press enter to continue"
@@ -35,6 +36,8 @@ first_time() {
 }
 
 second_time() {
+	git add *
+	git rm --cached github-terminal.sh
 	echo "Enter your commit details"
 	read commit_details
 	git commit -m $commit_deatils
