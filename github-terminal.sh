@@ -1,13 +1,22 @@
+initialise_ids() {
+	echo "Enter your github registered email address"
+	read emailID
+	git config --global user.email emailID
+	echo "Enter your registered Git ID"
+	read ID
+	git config --global user.name ID
+}
 first_time() {
 	echo "Initialising"
 	git init
 	echo "Inisialized"
 	echo "Adding All your files"
 	git add *
+	initialise_ids
 	echo "Want to show git status yes ot no[y/n]"
 	while :
 	do
-		read -i YorN
+		read YorN
 		case $YorN in 
 			y)
 				git status
@@ -19,6 +28,7 @@ first_time() {
 				;;
 			*)
 				echo "Give a valid Input"
+				break
 				;;
 	 esac
 	done
@@ -29,7 +39,7 @@ first_time() {
 	read repo_URL
 	echo "Enter your Commit details here example 'Firth Commit' or 'fixed this issue'"
 	read commit_details
-	git commit -m $commit_details
+	git commit -e $commit_details
 	git remote add origin $repo_URL
 	git push -u origin master
 	echo "Now we all done Check your repo in github"
@@ -40,11 +50,13 @@ second_time() {
 	git rm --cached github-terminal.sh
 	echo "Enter your commit details"
 	read commit_details
-	git commit -m $commit_deatils
+	git commit -e $commit_deatils
 	echo "Pushing to branch master"
 	git push -u origin master
 	echo "We are all done"
 }
+
+
 echo "Welcome To the git project. There some simple steps you have to do here.So We will guid you through this."
 echo "Press the desired number and press enter"
 echo "1.Upload source to github first time."
@@ -61,7 +73,7 @@ do
 			break
 			;;
 		2)
-			echo "Feature Under Development"
+			second_time
 			break
 			;;
 		3) 
