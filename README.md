@@ -30,6 +30,7 @@ How to Install :
 
 How to use it :
   Steps :
+  
     1. Open your project folder
     2. Open the Terminal in that folder
     3. Just write this command in the terminal : termo-git
