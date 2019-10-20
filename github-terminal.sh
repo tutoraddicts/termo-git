@@ -1,3 +1,4 @@
+#!/bin/sh
 initialise_ids() {
 	echo "Enter your github registered email address"
 	read emailID
@@ -13,7 +14,7 @@ first_time() {
 	echo "Adding All your files"
 	git add *
 	initialise_ids
-	echo "Want to show git status yes ot no[y/n]"
+	echo "Want to show git status yes or no[y/n]"
 	while :
 	do
 		read YorN
@@ -32,7 +33,6 @@ first_time() {
 				;;
 	 esac
 	done
-	git rm --cached github-terminal.sh
 	echo "Now creat a new Repo in your github"
 	echo "If you done all ready, copy the URL"
 	echo "and past the URL here and press enter to continue"
@@ -47,7 +47,6 @@ first_time() {
 
 second_time() {
 	git add *
-	git rm --cached github-terminal.sh
 	echo "Enter your commit details"
 	read commit_details
 	git commit -e $commit_deatils
