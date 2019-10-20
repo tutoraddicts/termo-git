@@ -3,6 +3,7 @@ This is a Terminal based github manager which will make it easy to use github co
 You just have to follow some really simple steps and let the program do all the taskes.
 
 I am going to mention some features bellow :
+
   It is in alfa mode right now so not all the mentioned features are available right now.
 
     1.Upload source to github first time.
@@ -20,6 +21,7 @@ I will add more features, as per needs.
 So if you find any issue or any bug please report me in : rohitdutta907@gmail.com
 
 How to Install :
+
   Steps :
      
     1. Go to Release section in this repo
@@ -29,6 +31,7 @@ How to Install :
     3. Simply double click to install it
 
 How to use it :
+
   Steps :
   
     1. Open your project folder
