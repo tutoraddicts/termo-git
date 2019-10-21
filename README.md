@@ -2,7 +2,7 @@
 This is a Terminal based github manager which will make it easy to use github command.
 You just have to follow some really simple steps and let the program do all the taskes.
 
-Download It From :- <b href="https://github.com/tutoraddicts/termo-git/releases">Download</b>
+Download It From :- <a href="https://github.com/tutoraddicts/termo-git/releases"><b>Download</b></a>
 
 I am going to mention some features bellow :
 
