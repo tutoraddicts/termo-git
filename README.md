@@ -2,6 +2,8 @@
 This is a Terminal based github manager which will make it easy to use github command.
 You just have to follow some really simple steps and let the program do all the taskes.
 
+Download It From :- <b src = https://github.com/tutoraddicts/termo-git/releases>Download</b>
+
 I am going to mention some features bellow :
 
   It is in alfa mode right now so not all the mentioned features are available right now.
