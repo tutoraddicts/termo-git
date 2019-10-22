@@ -167,28 +167,29 @@ clone() {
 }
 
 remove() {
-	echo "Want to show all the files you have in the directory ? YES or NO [y/n]:"
+	echo "So a window will popup and then select the files you want to remove from git repo"
+	echo "Want To delet File from git Repo? Insert Yes or No [y/n] : "
 	read yorn
 	while :
 	do
 		case $yorn in
 			y)
-				ls
+				filenames=$(zenity --file-selection)
+				echo $filenames
+				git rm --cached $filenames
 				break
 				;;
-			n)
+			n)	
+				clear
+				main_program
 				break
 				;;
 			*)
 				echo "Enter a valid Input"
-				break
 				;;
 		esac
 		done
-	echo "Enter the folder name"
-	read filename
-	git rm -cached $filename
-	git status
+	#git status
 	main_program
 }
 
