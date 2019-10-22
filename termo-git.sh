@@ -93,6 +93,7 @@ initialise_ids() {
 first_time() {
 	echo "Initialising"
 	git init
+	git add *
 	echo "Inisialized"
 	echo "Adding All your files"
 	echo "Want to show git status yes or no[y/n]"
@@ -128,6 +129,7 @@ first_time() {
 
 second_time() {
     git init
+	git add *
 	git commit -a
 	echo "Pushing to branch master"
 	git push -u origin master
