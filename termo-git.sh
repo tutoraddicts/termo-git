@@ -28,11 +28,12 @@ echo "2.Upload source secod time."
 echo "3.Clone old repo."
 echo "4.Remove File from your local repo"
 echo "5.Add File into your local repo"
+echo "6.Exit Termo Git"
 
 while :
 do
-	read INPUT_NUMBER
-	case $INPUT_NUMBER in 
+	read -p "-: " INPUT_NUMBER
+	case $INPUT_NUMBER in
 		1)
 			first_time
 			break
@@ -51,6 +52,11 @@ do
 			;;
 		5)
 			add
+			break
+			;;
+		6)
+			clear
+			exit 0
 			break
 			;;
 		*)
@@ -174,8 +180,7 @@ remove() {
 	do
 		case $yorn in
 			y)
-				filenames=$(zenity --file-selection)
-				echo $filenames
+				filenames=$(zenity --file-selection --title "Termo Git")
 				git rm --cached $filenames
 				break
 				;;
@@ -194,13 +199,15 @@ remove() {
 }
 
 add() {
-	echo "Want to show all the files you have in the directory ? YES or NO [y/n]:"
+	echo "Select the file you want to add into your local git repo"
+	echo -n "Press Yess or no [y/n] : "
 	read yorn
 	while :
 	do
 		case $yorn in
 			y)
-				ls
+				filename=$(zenity --file-selection --title "Termo Git")
+				git add $filename
 				break
 				;;
 			n)
@@ -212,10 +219,6 @@ add() {
 				;;
 		esac
 		done
-	echo "Enter the folder name"
-	read filename
-	git add $filename
-	git status
 	main_program
 }
 #<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
