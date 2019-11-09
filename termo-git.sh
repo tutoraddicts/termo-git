@@ -3,18 +3,18 @@
 #Terminal Programe Git Hub known as TERMO-git
 #<><><><><><><><><><><><><><><><><><><><><><><>
 Identification() {
-username=$(git config user.name)
-emailid=$(git config user.email)
+    username=$(git config --global user.name)
+    emailid=$(git config --global user.email)
 
-if [ -z $(git config user.name) && -z $(git config user.email)]
-then 
-    echo "Your Git email id and user id are not Present in your computer"
-    echo "So Enter What we asked :) "
-    echo ""
-    initialise_ids
-else
-    main_program
-fi
+    if [ -z "$username" ]
+    then 
+        echo "Your Git email id and user id are not Present in your computer"
+        echo "So Enter What we asked :) "
+        echo ""
+        initialise_ids
+    else
+        main_program    
+    fi
 }
 #<><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 # main program is for just selecting what user want to do
@@ -74,10 +74,10 @@ done
 initialise_ids() {
 	echo "Enter your github registered email address"
 	read emailID
-	git config --global user.email emailID
+	git config --global user.email $emailID
 	echo "Enter your registered Git ID"
 	read ID
-	git config --global user.name ID
+	git config --global user.name $ID
     
     main_program
 }
@@ -95,7 +95,8 @@ initialise_ids() {
 first_time() {
 	echo "Initialising"
 	git init
-	git add *
+	git add *.*
+    git add *
 	echo "Inisialized"
 	echo "Adding All your files"
 	echo "Want to show git status yes or no[y/n]"
@@ -131,7 +132,9 @@ first_time() {
 
 second_time() {
     git init
-	git add *
+	git add *.*
+    git add *
+    git add -A
 	git commit -a
 	echo "Pushing to branch master"
 	git push -u origin master
