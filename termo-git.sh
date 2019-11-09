@@ -6,7 +6,7 @@ Identification() {
 username=$(git config user.name)
 emailid=$(git config user.email)
 
-if [ -z "$username" && -z "$emailid"]
+if [ -z $(git config user.name) && -z $(git config user.email)]
 then 
     echo "Your Git email id and user id are not Present in your computer"
     echo "So Enter What we asked :) "
@@ -78,6 +78,8 @@ initialise_ids() {
 	echo "Enter your registered Git ID"
 	read ID
 	git config --global user.name ID
+    
+    main_program
 }
 
 #<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><><><><><><><><><><><><><>
