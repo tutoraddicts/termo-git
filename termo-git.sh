@@ -21,14 +21,13 @@ Identification() {
 # we use switch case under infinite while loop
 #<><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 main_program() {
-echo "Welcome To the git project. There some simple steps you have to do here.So We will guid you through this."
-echo "Press the desired number and press enter"
-echo "1.Upload source to github first time."
-echo "2.Upload source secod time."
-echo "3.Clone old repo."
-echo "4.Remove File from your local repo"
-echo "5.Add File into your local repo"
-echo "6.Exit Termo Git"
+echo "* Press the desired number and press enter *\n"
+echo "1. Upload source to Github."
+echo "2. Sync with Github."
+echo "3. Clone old repo."
+echo "4. Remove File from your local repo"
+echo "5. Add File into your local repo"
+echo "6. Exit Termo Git\n"
 
 while :
 do
@@ -118,11 +117,10 @@ first_time() {
 				;;
 	 esac
 	done
-	echo "Now creat a new Repo in your github"
-	echo "If you done all ready, copy the URL"
-	echo "and past the URL here and press enter to continue"
+	echo "* Now creat a new Repo in your github *"
+	echo "* If you done all ready, copy the URL *"
+	echo "* Past the URL here and press enter to continue *"
 	read repo_URL
-	echo "Enter your Commit details here example 'Firth Commit' or 'fixed this issue'"
 	git commit -a
 	git remote add origin $repo_URL
 	git push -u origin master
@@ -146,37 +144,18 @@ second_time() {
 # This clone function represent the 3rd feature of our programe
 #<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 clone() {
-	echo "You want a new folder where you want to store"
-	echo " or you want git to creat default folder YES or NO [y/n]"
-	read yorn
-	while :
-	do 
-		case $yorn in
-			y)
-				echo "Enter you desired folder name"
-				read folName
-				mkdir $folName
-				cd $folName
-				echo "We are in your new folder now"
-				echo "Enter the repositary link : "
-				read repo_link 
-				git clone $repo_link ./
-				break
-				;;
+	echo "* Enter your repository link *"
+	read repo_link
+	if [ -z "$repo_link" ] 
+	then
+		echo "* Enter Link and then press enter *"
+		clone
+	else
+		git clone $repo_link
 
-			n)
-				read repo_link
-				git clone $repo_link
-				break
-				;;
-			
-			*)
-				echo "you must enter a valid input"
-				break
-				;;
-		esac
-		done
-		main_program
+	fi
+		
+	main_program
 }
 
 remove() {
