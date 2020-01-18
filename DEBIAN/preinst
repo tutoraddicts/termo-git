@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "Installing Unity Hub"
-
-if [ -f "bin/termo-git" ]; then
-    sudo rm -r bin/termo-git
-
-fi
